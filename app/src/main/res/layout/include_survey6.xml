@@ -32,9 +32,9 @@
 
         <Button
             android:id="@+id/btn_start_mealmate"
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_move"
+            android:background="@drawable/btn_green"
             android:text="Meal Mate\n시작하기"
             android:textColor="@color/white"
             android:textSize="20dp"

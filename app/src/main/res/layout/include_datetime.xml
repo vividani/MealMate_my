@@ -2,6 +2,7 @@
 <layout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     >
     <!-- 날짜 -->
     <!-- 색상 white라서 안 보이는거임 -->
@@ -15,81 +16,18 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- 월 -->
-        <LinearLayout
-            android:id="@+id/ll_datetime_month"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/tv_datetime_date">
-
-            <TextView
-                android:id="@+id/tv_datetime_month"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosans_bold"
-                android:text="@{Date.month+1+``}"
-                android:textSize="20dp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosans_bold"
-                android:text=" /"
-                android:textSize="20dp"
-                android:textColor="@color/white"/>
-        </LinearLayout>
-
-        <!-- 일 -->
         <TextView
-            android:id="@+id/tv_datetime_date"
+            android:id="@+id/tv_datetime"
+            android:text="@{Date.month+1+``+`/`+Date.dayOfMonth+``+`(`+Date.dayOfWeekToString+`)`}"
+            tools:text="1/1(월)"
+            android:textSize="20dp"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/notosans_bold"
-            android:text="@{``+Date.dayOfMonth}"
-            android:textSize="20dp"
-            android:textColor="@color/white"
-            app:layout_constraintLeft_toRightOf="@id/ll_datetime_month"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/ll_datetime_day" />
-
-        <!-- 요일 -->
-        <LinearLayout
-            android:id="@+id/ll_datetime_day"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            app:layout_constraintLeft_toRightOf="@id/tv_datetime_date"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosans_bold"
-                android:text="("
-                android:textSize="20dp"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/tv_datetime_day"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosans_bold"
-                android:text="@{``+Date.dayOfWeekToString}"
-                android:textSize="20dp"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosans_bold"
-                android:text=")"
-                android:textSize="20dp"
-                android:textColor="@color/white"/>
-        </LinearLayout>
+            android:includeFontPadding="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -16,9 +16,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_survey"
+        android:background="@color/light_green"
         tools:context=".view.activity.UserDataUpdateActivity">
-        <TextView
+
+        <!-- 로고 -->
+        <!--<TextView
             android:id="@+id/style_logo"
             android:layout_width="149dp"
             android:layout_height="39dp"
@@ -29,7 +31,7 @@
             android:textSize="35dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />-->
         <Button
             android:id="@+id/btn_back"
             android:layout_width="53dp"
@@ -98,7 +100,7 @@
             android:layout_width="90dp"
             android:layout_height="42dp"
             android:layout_marginTop="40dp"
-            android:background="@drawable/btn_move"
+            android:background="@drawable/btn_green"
             android:text="다음"
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@id/vf_survey"

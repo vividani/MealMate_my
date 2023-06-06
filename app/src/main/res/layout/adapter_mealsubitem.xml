@@ -21,14 +21,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:paddingHorizontal="20dp">
+        android:layout_marginBottom="6dp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp">
 
         <TextView
             android:id="@+id/tv_meal_subItem_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/notosans_medium"
+            android:includeFontPadding="false"
             android:text="@{Food.foodName}"
             android:hint="음식명"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -41,18 +43,20 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:fontFamily="@font/notosans_medium"
-            android:text="000g"
+            android:includeFontPadding="false"
+            android:text="@{``+Food.food1serving}"
+            tools:text="000 g"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/btn_meal_subItem_delete"
-            app:layout_constraintStart_toEndOf="@id/tv_meal_subItem_name"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@id/tv_meal_subItem_name" />
 
         <!-- 음식 삭제하기 -->
         <Button
             android:id="@+id/btn_meal_subItem_delete"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/btn_delete"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/btn_delete_green"
             android:onClick="@{() -> MealSetViewModel.onDeleteFood(Meal,Food)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

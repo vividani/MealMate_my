@@ -41,11 +41,11 @@
 
             <CalendarView
                 android:id="@+id/cv_meal_info"
-                android:layout_width="320dp"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="30dp"
+                android:layout_width="360dp"
+                android:layout_height="300dp"
+                android:layout_marginVertical="16dp"
                 android:background="@drawable/style_box_70"
-                android:focusedMonthDateColor="@color/pink"
+                
                 android:onDateChangeListener = "@{(view,year,month,dayOfMonth) ->MealCheckViewModel.onDateSelected(view, year,month,dayOfMonth)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +56,7 @@
             <include
                 android:id="@+id/include_meal_list"
                 layout="@layout/include_meallist"
-                android:layout_width="320dp"
+                android:layout_width="360dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 app:Date="@{Date}"

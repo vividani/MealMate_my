@@ -2,9 +2,8 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:state_selected="false"
-        android:drawable="@drawable/ic_menu_calendar" />
+        android:drawable="@drawable/btn_meal_check" />
     <item
         android:state_selected="true"
-        android:state_pressed="true"
-        android:drawable="@drawable/ic_menu_calendar_selected" />
+        android:drawable="@drawable/btn_meal_check_selected" />
 </selector>

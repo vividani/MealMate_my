@@ -13,24 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_modify">
-
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fl_navigation"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout="@layout/fragment_home"
-            tools:layout_editor_absoluteX="16dp" />
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation_view"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/navigation_bar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:menu="@menu/menu_bottom_navigation" />
+        android:background="@drawable/background_main">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_meal_modify"
@@ -41,6 +24,18 @@
             android:src="@drawable/ic_menu_modify"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/menu_bottom_navigation"
+            android:background="@drawable/navigation_bar"
+            app:itemIconSize="26dp"
+            app:itemIconTint="@drawable/menu_selector_color"
+            app:itemTextColor="@drawable/menu_selector_color"
+            app:labelVisibilityMode="unlabeled" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
