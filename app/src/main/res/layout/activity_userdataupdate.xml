@@ -16,7 +16,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/light_green"
+        android:background="@drawable/background_main"
         tools:context=".view.activity.UserDataUpdateActivity">
 
         <Button
@@ -45,12 +45,11 @@
             <!-- 네번째 :사용자 이름 -->
             <!-- 다섯번째 : 사용자 목적 -->
             <!-- 여섯번째 : 시작 -->
-
-            <include
+            <!--<include
                 android:id="@+id/include_survey1"
                 layout="@layout/include_survey1"
                 app:User="@={User}"
-                />
+                />-->
 
             <include
                 android:id="@+id/include_survey2"

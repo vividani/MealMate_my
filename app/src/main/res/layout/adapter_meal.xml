@@ -73,7 +73,6 @@
             android:id="@+id/btn_meal_check"
             android:layout_width="28dp"
             android:layout_height="32dp"
-
             android:background="@{Meal.checked==0 ? @drawable/btn_meal_check : @drawable/btn_meal_check_selected}"
             android:onClick="@{() -> MealCheckViewModel.onMealChecked(Meal)}"
             app:layout_constraintRight_toRightOf="parent"
@@ -86,11 +85,12 @@
             android:id="@+id/ll_meal_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:padding="10dp"
             android:text="@{Meal.foodList.toStringList()}"
+            app:layout_constraintTop_toBottomOf="@id/tv_meal_kcal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="@id/tv_meal_info" />
+            app:layout_constraintLeft_toLeftOf="@id/tv_meal_info"
+            tools:text="사과 100g" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

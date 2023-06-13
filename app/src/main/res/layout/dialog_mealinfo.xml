@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- 검색창에서 보이는 개별 음식 정보 -->
+<?xml version="1.0" encoding="utf-8"?><!-- 체크박스 클릭 시 보여주는 끼니 정보 -->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -28,7 +28,7 @@
         android:background="@drawable/style_box_90"
         android:padding="10dp">
 
-        <!-- 삭제 버튼 혹시 모르니까 -->
+        <!-- 취소버튼 -->
         <Button
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -42,7 +42,7 @@
         <!-- 메뉴이름 -->
         <TextView
             android:id="@+id/tv_food_name"
-            tools:text="음식명"
+            tools:text="끼니번호"
             android:textSize="20dp"
             android:fontFamily="@font/notosans_medium"
             android:includeFontPadding="false"
@@ -54,51 +54,6 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!--하트-->
-        <Button
-            android:id="@+id/btn_food_like"
-            android:layout_width="24dp"
-            android:layout_height="22dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginRight="10dp"
-            android:background="@{Food.foodLike==0 ? @drawable/btn_food_like : @drawable/btn_food_like_selected}"
-            android:onClick="@{() -> FoodViewModel.onLikeStateChange(Food)}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <!-- 한끼 제공량 -->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_food_amount"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:padding="6dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_food_name">
-
-            <TextView
-                android:id="@+id/tv1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1회 제공량 :"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"/>
-
-            <TextView
-                android:id="@+id/tv_food_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="@{``+Food.food1serving+ ` g`}"
-                tools:text="000 g"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
         <!-- 탄수화물 -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_food_nutrition_carbohydrate"
@@ -107,7 +62,7 @@
             android:padding="6dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cl_food_amount">
+            app:layout_constraintTop_toBottomOf="@+id/tv_food_name">
 
             <TextView
                 android:id="@+id/tv2"
@@ -225,22 +180,6 @@
                 app:layout_constraintRight_toRightOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!-- 추가버튼 -->
-        <Button
-            android:id="@+id/btn_food_add"
-            android:text="식단에 추가하기"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_width="120dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/btn_green"
-            android:onClick="@{() -> MealSetViewModel.finishAddFoodCycle(Food)}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cl_food_nutrition_kcal" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

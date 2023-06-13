@@ -26,7 +26,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/blue">
+            android:background="@drawable/background_main">
 
             <!-- 로고 -->
             <TextView
@@ -70,23 +70,12 @@
                         android:id="@+id/tv_user_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@{``+User.name}"
-                        android:textSize="20dp"
-                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@{``+User.name+ `님은`}"
+                        android:textSize="16dp"
                         app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toLeftOf="@id/tv_user_purpose_text"
-                        tools:text="이름" />
-
-                    <TextView
-                        android:id="@+id/tv_user_purpose_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:text="님은"
-                        android:textSize="20dp"
-                        app:layout_constraintTop_toTopOf="@id/tv_user_name"
-                        app:layout_constraintLeft_toRightOf="@id/tv_user_name"
-                        app:layout_constraintRight_toRightOf="parent"/>
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="이름 님은" />
 
                     <!-- 사용자 목적 -->
                     <!-- android:text="@{User.state}" 필요함-->
@@ -96,11 +85,13 @@
                         android:layout_height="wrap_content"
                         android:text="@{User.purposeToString+` 중!!`}"
                         android:textColor="@color/orange"
-                        android:textSize="25dp"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
+                        android:textSize="20dp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        tools:text="벌크업 중!" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
+                        tools:text="벌크업 중!!" />
+
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
